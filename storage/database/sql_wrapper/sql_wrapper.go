@@ -60,6 +60,10 @@ func (f *sql_wrapperDB) QueryRow(query string, args ...interface{}) *sql.Row {
 	return f.db.QueryRow(query, args...)
 }
 
+func (f *sql_wrapperDB) QueryRowx(query string, args ...interface{}) *sqlx.Row {
+	return f.db.QueryRowx(query, args...)
+}
+
 func (f *sql_wrapperDB) Begin() (*sql.Tx, error) {
 	return f.db.Begin()
 }
