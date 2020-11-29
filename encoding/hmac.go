@@ -28,5 +28,8 @@ func (this HMACAuthData) GenerateHMACHash(secret string) string {
 
 	hash := base64.StdEncoding.EncodeToString(h.Sum(nil))
 
-	return strings.Replace(hash, " ", "+", -1)
+	hash = strings.Replace(hash, " ", "-", -1)
+	hash = strings.Replace(hash, "+", "-", -1)
+
+	return hash
 }
